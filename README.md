@@ -12,6 +12,11 @@ prisma deploy
 prisma reset
 ```
 
+## Prisma seed DB
+```
+prisma seed
+```
+
 ## Getting schema
 ```
 npm i -g graphql-cli
