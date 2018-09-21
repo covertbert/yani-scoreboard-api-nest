@@ -1,29 +1,21 @@
 mutation {
-  first: createPost(
+  first: createPlayer(
     data: {
-      title: "Hello World 👋"
-      text: "I like turtles."
-      isPublished: true
+      name: "Bill"
     }
   ) {
     id
   }
-
-  second: createPost(
+  second: createPlayer(
     data: {
-      title: "Join us at GraphQL Europe 🇪🇺 "
-      text: "Get a 10%-discount with this promo code on graphql-europe.org: gql-boilerplates"
-      isPublished: true
+      name: "Ted"
     }
   ) {
     id
   }
-
-  third: createPost(
+  third: createPlayer(
     data: {
-      title: "Solving world hunger"
-      text: "This is a draft..."
-      isPublished: false
+      name: "Sam"
     }
   ) {
     id
