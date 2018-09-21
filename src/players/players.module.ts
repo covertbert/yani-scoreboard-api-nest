@@ -1,6 +1,6 @@
-import { Module } from '@nestjs/common';
-import { PlayersResolver } from './players.resolver';
-import { PrismaModule } from 'prisma/prisma.module';
+import { Module } from '@nestjs/common'
+import { PlayersResolver } from './players.resolver'
+import { PrismaModule } from 'prisma/prisma.module'
 
 @Module({
   providers: [PlayersResolver],

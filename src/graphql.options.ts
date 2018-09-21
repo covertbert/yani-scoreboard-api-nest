@@ -1,6 +1,6 @@
-import { GqlOptionsFactory, GqlModuleOptions } from '@nestjs/graphql';
-import { Injectable } from '@nestjs/common';
-import { join } from 'path';
+import { GqlOptionsFactory, GqlModuleOptions } from '@nestjs/graphql'
+import { Injectable } from '@nestjs/common'
+import { join } from 'path'
 
 @Injectable()
 export class GraphqlOptions implements GqlOptionsFactory {
@@ -16,6 +16,6 @@ export class GraphqlOptions implements GqlOptionsFactory {
         path: join(process.cwd(), 'src/graphql.schema.d.ts'),
         outputAs: 'class',
       },
-    };
+    }
   }
 }

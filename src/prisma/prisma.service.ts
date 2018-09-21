@@ -1,5 +1,5 @@
-import { Injectable } from '@nestjs/common';
-import { Prisma } from './prisma.binding';
+import { Injectable } from '@nestjs/common'
+import { Prisma } from './prisma.binding'
 
 @Injectable()
 export class PrismaService extends Prisma {
@@ -7,6 +7,6 @@ export class PrismaService extends Prisma {
     super({
       endpoint: 'http://localhost:4466',
       debug: false,
-    });
+    })
   }
 }
