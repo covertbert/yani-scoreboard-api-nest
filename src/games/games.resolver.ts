@@ -7,8 +7,7 @@ import {
   Info,
 } from '@nestjs/graphql';
 import { PrismaService } from '../prisma/prisma.service';
-import { BatchPayload } from '../prisma/prisma.binding';
-import { Game } from '../graphql.schema';
+import { BatchPayload, Game } from '../prisma/prisma.binding';
 
 @Resolver()
 export class GamesResolver {
@@ -19,42 +18,42 @@ export class GamesResolver {
     return await this.prisma.query.games(args, info);
   }
 
-  // @Query('post')
-  // async getPost(@Args() args, @Info() info): Promise<Post> {
-  //   return await this.prisma.query.post(args, info);
-  // }
+  @Query('game')
+  async getGame(@Args() args, @Info() info): Promise<Game> {
+    return await this.prisma.query.game(args, info);
+  }
 
-  // @Mutation('createPost')
-  // async createPost(@Args() args, @Info() info): Promise<Post> {
-  //   return await this.prisma.mutation.createPost(args, info);
-  // }
+  @Mutation('createGame')
+  async createGame(@Args() args, @Info() info): Promise<Game> {
+    return await this.prisma.mutation.createGame(args, info);
+  }
 
-  // @Mutation('updatePost')
-  // async updatePost(@Args() args, @Info() info): Promise<Post> {
-  //   return await this.prisma.mutation.updatePost(args, info);
-  // }
+  @Mutation('updateGame')
+  async updateGame(@Args() args, @Info() info): Promise<Game> {
+    return await this.prisma.mutation.updateGame(args, info);
+  }
 
-  // @Mutation('updateManyPosts')
-  // async updateManyPosts(@Args() args, @Info() info): Promise<BatchPayload> {
-  //   return await this.prisma.mutation.updateManyPosts(args, info);
-  // }
+  @Mutation('updateManyGames')
+  async updateManyGames(@Args() args, @Info() info): Promise<BatchPayload> {
+    return await this.prisma.mutation.updateManyGames(args, info);
+  }
 
-  // @Mutation('deletePost')
-  // async deletePost(@Args() args, @Info() info): Promise<Post> {
-  //   return await this.prisma.mutation.deletePost(args, info);
-  // }
+  @Mutation('deleteGame')
+  async deleteGame(@Args() args, @Info() info): Promise<Game> {
+    return await this.prisma.mutation.deleteGame(args, info);
+  }
 
-  // @Mutation('deleteManyPosts')
-  // async deleteManyPosts(@Args() args, @Info() info): Promise<BatchPayload> {
-  //   return await this.prisma.mutation.deleteManyPosts(args, info);
-  // }
+  @Mutation('deleteManyGames')
+  async deleteManyGames(@Args() args, @Info() info): Promise<BatchPayload> {
+    return await this.prisma.mutation.deleteManyGames(args, info);
+  }
 
-  // @Subscription('player')
-  // onUserMutation() {
-  //   return {
-  //     subscribe: (obj, args, ctx, info) => {
-  //       return this.prisma.subscription.players(args, info);
-  //     },
-  //   };
-  // }
+  @Subscription('game')
+  onGameMutation() {
+    return {
+      subscribe: (obj, args, ctx, info) => {
+        return this.prisma.subscription.game(args, info);
+      },
+    };
+  }
 }

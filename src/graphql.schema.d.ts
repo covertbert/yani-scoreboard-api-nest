@@ -256,11 +256,11 @@ export class BatchPayload {
     count: Long;
 }
 
-export class Game implements Node {
+export class Game {
     id: string;
     createdAt: DateTime;
     targetScore: number;
-    abstract players(where?: PlayerWhereInput, orderBy?: PlayerOrderByInput, skip?: number, after?: string, before?: string, first?: number, last?: number): Player[] | Promise<Player[]>;
+    players: Player[];
     hasFinished?: boolean;
 }
 
@@ -311,9 +311,9 @@ export class PageInfo {
     endCursor?: string;
 }
 
-export class Player implements Node {
+export class Player {
     id: string;
-    abstract game(where?: GameWhereInput): Game | Promise<Game>;
+    game?: Game;
     createdAt: DateTime;
     name: string;
     score?: number;
@@ -342,13 +342,6 @@ export class PlayerSubscriptionPayload {
     node?: Player;
     updatedFields: string[];
     previousValues?: PlayerPreviousValues;
-}
-
-export class Post {
-    id: string;
-    isPublished: boolean;
-    title: string;
-    text: string;
 }
 
 export abstract class IQuery {
