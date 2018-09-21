@@ -19,42 +19,33 @@ export class PlayersResolver {
     return await this.prisma.query.players(args, info);
   }
 
-  // @Query('post')
-  // async getPost(@Args() args, @Info() info): Promise<Post> {
-  //   return await this.prisma.query.post(args, info);
+  // @Query('player')
+  // async getPlayer(@Args() args, @Info() info): Promise<Player> {
+  //   return await this.prisma.query.player(args, info);
   // }
 
-  // @Mutation('createPost')
-  // async createPost(@Args() args, @Info() info): Promise<Post> {
-  //   return await this.prisma.mutation.createPost(args, info);
+  // @Mutation('createPlayer')
+  // async createPlayer(@Args() args, @Info() info): Promise<Player> {
+  //   return await this.prisma.mutation.createPlayer(args, info);
   // }
 
-  // @Mutation('updatePost')
-  // async updatePost(@Args() args, @Info() info): Promise<Post> {
-  //   return await this.prisma.mutation.updatePost(args, info);
+  // @Mutation('updatePlayer')
+  // async updatePlayer(@Args() args, @Info() info): Promise<Player> {
+  //   return await this.prisma.mutation.updatePlayer(args, info);
   // }
 
-  // @Mutation('updateManyPosts')
-  // async updateManyPosts(@Args() args, @Info() info): Promise<BatchPayload> {
-  //   return await this.prisma.mutation.updateManyPosts(args, info);
+  // @Mutation('updateManyPlayers')
+  // async updateManyPlayers(@Args() args, @Info() info): Promise<BatchPayload> {
+  //   return await this.prisma.mutation.updateManyPlayers(args, info);
   // }
 
-  // @Mutation('deletePost')
-  // async deletePost(@Args() args, @Info() info): Promise<Post> {
-  //   return await this.prisma.mutation.deletePost(args, info);
+  // @Mutation('deletePlayer')
+  // async deletePlayer(@Args() args, @Info() info): Promise<Player> {
+  //   return await this.prisma.mutation.deletePlayer(args, info);
   // }
 
-  // @Mutation('deleteManyPosts')
-  // async deleteManyPosts(@Args() args, @Info() info): Promise<BatchPayload> {
-  //   return await this.prisma.mutation.deleteManyPosts(args, info);
-  // }
-
-  // @Subscription('player')
-  // onUserMutation() {
-  //   return {
-  //     subscribe: (obj, args, ctx, info) => {
-  //       return this.prisma.subscription.players(args, info);
-  //     },
-  //   };
+  // @Mutation('deleteManyPlayers')
+  // async deleteManyPlayers(@Args() args, @Info() info): Promise<BatchPayload> {
+  //   return await this.prisma.mutation.deleteManyPlayers(args, info);
   // }
 }
