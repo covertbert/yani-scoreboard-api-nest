@@ -4,34 +4,158 @@ import { Options } from 'graphql-binding'
 import { makePrismaBindingClass, BasePrismaOptions } from 'prisma-binding'
 
 export interface Query {
-    games: <T = Game[]>(args: { where?: GameWhereInput, orderBy?: GameOrderByInput, skip?: Int, after?: String, before?: String, first?: Int, last?: Int }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    players: <T = Player[]>(args: { where?: PlayerWhereInput, orderBy?: PlayerOrderByInput, skip?: Int, after?: String, before?: String, first?: Int, last?: Int }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    game: <T = Game | null>(args: { where: GameWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    player: <T = Player | null>(args: { where: PlayerWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    gamesConnection: <T = GameConnection>(args: { where?: GameWhereInput, orderBy?: GameOrderByInput, skip?: Int, after?: String, before?: String, first?: Int, last?: Int }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    playersConnection: <T = PlayerConnection>(args: { where?: PlayerWhereInput, orderBy?: PlayerOrderByInput, skip?: Int, after?: String, before?: String, first?: Int, last?: Int }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    node: <T = Node | null>(args: { id: ID_Output }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> 
-  }
+  games: <T = Game[]>(
+    args: {
+      where?: GameWhereInput
+      orderBy?: GameOrderByInput
+      skip?: Int
+      after?: String
+      before?: String
+      first?: Int
+      last?: Int
+    },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<T>
+  players: <T = Player[]>(
+    args: {
+      where?: PlayerWhereInput
+      orderBy?: PlayerOrderByInput
+      skip?: Int
+      after?: String
+      before?: String
+      first?: Int
+      last?: Int
+    },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<T>
+  game: <T = Game | null>(
+    args: { where: GameWhereUniqueInput },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<T>
+  player: <T = Player | null>(
+    args: { where: PlayerWhereUniqueInput },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<T>
+  gamesConnection: <T = GameConnection>(
+    args: {
+      where?: GameWhereInput
+      orderBy?: GameOrderByInput
+      skip?: Int
+      after?: String
+      before?: String
+      first?: Int
+      last?: Int
+    },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<T>
+  playersConnection: <T = PlayerConnection>(
+    args: {
+      where?: PlayerWhereInput
+      orderBy?: PlayerOrderByInput
+      skip?: Int
+      after?: String
+      before?: String
+      first?: Int
+      last?: Int
+    },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<T>
+  node: <T = Node | null>(
+    args: { id: ID_Output },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<T>
+}
 
 export interface Mutation {
-    createGame: <T = Game>(args: { data: GameCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    createPlayer: <T = Player>(args: { data: PlayerCreateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateGame: <T = Game | null>(args: { data: GameUpdateInput, where: GameWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updatePlayer: <T = Player | null>(args: { data: PlayerUpdateInput, where: PlayerWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteGame: <T = Game | null>(args: { where: GameWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deletePlayer: <T = Player | null>(args: { where: PlayerWhereUniqueInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertGame: <T = Game>(args: { where: GameWhereUniqueInput, create: GameCreateInput, update: GameUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    upsertPlayer: <T = Player>(args: { where: PlayerWhereUniqueInput, create: PlayerCreateInput, update: PlayerUpdateInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyGames: <T = BatchPayload>(args: { data: GameUpdateInput, where?: GameWhereInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    updateManyPlayers: <T = BatchPayload>(args: { data: PlayerUpdateInput, where?: PlayerWhereInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyGames: <T = BatchPayload>(args: { where?: GameWhereInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> ,
-    deleteManyPlayers: <T = BatchPayload>(args: { where?: PlayerWhereInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<T> 
-  }
+  createGame: <T = Game>(
+    args: { data: GameCreateInput },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<T>
+  createPlayer: <T = Player>(
+    args: { data: PlayerCreateInput },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<T>
+  updateGame: <T = Game | null>(
+    args: { data: GameUpdateInput; where: GameWhereUniqueInput },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<T>
+  updatePlayer: <T = Player | null>(
+    args: { data: PlayerUpdateInput; where: PlayerWhereUniqueInput },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<T>
+  deleteGame: <T = Game | null>(
+    args: { where: GameWhereUniqueInput },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<T>
+  deletePlayer: <T = Player | null>(
+    args: { where: PlayerWhereUniqueInput },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<T>
+  upsertGame: <T = Game>(
+    args: {
+      where: GameWhereUniqueInput
+      create: GameCreateInput
+      update: GameUpdateInput
+    },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<T>
+  upsertPlayer: <T = Player>(
+    args: {
+      where: PlayerWhereUniqueInput
+      create: PlayerCreateInput
+      update: PlayerUpdateInput
+    },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<T>
+  updateManyGames: <T = BatchPayload>(
+    args: { data: GameUpdateInput; where?: GameWhereInput },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<T>
+  updateManyPlayers: <T = BatchPayload>(
+    args: { data: PlayerUpdateInput; where?: PlayerWhereInput },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<T>
+  deleteManyGames: <T = BatchPayload>(
+    args: { where?: GameWhereInput },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<T>
+  deleteManyPlayers: <T = BatchPayload>(
+    args: { where?: PlayerWhereInput },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<T>
+}
 
 export interface Subscription {
-    game: <T = GameSubscriptionPayload | null>(args: { where?: GameSubscriptionWhereInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T>> ,
-    player: <T = PlayerSubscriptionPayload | null>(args: { where?: PlayerSubscriptionWhereInput }, info?: GraphQLResolveInfo | string, options?: Options) => Promise<AsyncIterator<T>> 
-  }
+  game: <T = GameSubscriptionPayload | null>(
+    args: { where?: GameSubscriptionWhereInput },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<AsyncIterator<T>>
+  player: <T = PlayerSubscriptionPayload | null>(
+    args: { where?: PlayerSubscriptionWhereInput },
+    info?: GraphQLResolveInfo | string,
+    options?: Options,
+  ) => Promise<AsyncIterator<T>>
+}
 
 export interface Exists {
   Game: (where?: GameWhereInput) => Promise<boolean>
@@ -43,22 +167,36 @@ export interface Prisma {
   mutation: Mutation
   subscription: Subscription
   exists: Exists
-  request: <T = any>(query: string, variables?: {[key: string]: any}) => Promise<T>
-  delegate(operation: 'query' | 'mutation', fieldName: string, args: {
-    [key: string]: any;
-}, infoOrQuery?: GraphQLResolveInfo | string, options?: Options): Promise<any>;
-delegateSubscription(fieldName: string, args?: {
-    [key: string]: any;
-}, infoOrQuery?: GraphQLResolveInfo | string, options?: Options): Promise<AsyncIterator<any>>;
-getAbstractResolvers(filterSchema?: GraphQLSchema | string): IResolvers;
+  request: <T = any>(
+    query: string,
+    variables?: { [key: string]: any },
+  ) => Promise<T>
+  delegate(
+    operation: 'query' | 'mutation',
+    fieldName: string,
+    args: {
+      [key: string]: any
+    },
+    infoOrQuery?: GraphQLResolveInfo | string,
+    options?: Options,
+  ): Promise<any>
+  delegateSubscription(
+    fieldName: string,
+    args?: {
+      [key: string]: any
+    },
+    infoOrQuery?: GraphQLResolveInfo | string,
+    options?: Options,
+  ): Promise<AsyncIterator<any>>
+  getAbstractResolvers(filterSchema?: GraphQLSchema | string): IResolvers
 }
 
 export interface BindingConstructor<T> {
-  new(options: BasePrismaOptions): T
+  new (options: BasePrismaOptions): T
 }
 /**
  * Type Defs
-*/
+ */
 
 const typeDefs = `type AggregateGame {
   count: Int!
@@ -650,37 +788,39 @@ type Subscription {
 }
 `
 
-export const Prisma = makePrismaBindingClass<BindingConstructor<Prisma>>({typeDefs})
+export const Prisma = makePrismaBindingClass<BindingConstructor<Prisma>>({
+  typeDefs,
+})
 
 /**
  * Types
-*/
+ */
 
-export type GameOrderByInput =   'id_ASC' |
-  'id_DESC' |
-  'createdAt_ASC' |
-  'createdAt_DESC' |
-  'targetScore_ASC' |
-  'targetScore_DESC' |
-  'hasFinished_ASC' |
-  'hasFinished_DESC' |
-  'updatedAt_ASC' |
-  'updatedAt_DESC'
+export type GameOrderByInput =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'createdAt_ASC'
+  | 'createdAt_DESC'
+  | 'targetScore_ASC'
+  | 'targetScore_DESC'
+  | 'hasFinished_ASC'
+  | 'hasFinished_DESC'
+  | 'updatedAt_ASC'
+  | 'updatedAt_DESC'
 
-export type PlayerOrderByInput =   'id_ASC' |
-  'id_DESC' |
-  'createdAt_ASC' |
-  'createdAt_DESC' |
-  'name_ASC' |
-  'name_DESC' |
-  'score_ASC' |
-  'score_DESC' |
-  'updatedAt_ASC' |
-  'updatedAt_DESC'
+export type PlayerOrderByInput =
+  | 'id_ASC'
+  | 'id_DESC'
+  | 'createdAt_ASC'
+  | 'createdAt_DESC'
+  | 'name_ASC'
+  | 'name_DESC'
+  | 'score_ASC'
+  | 'score_DESC'
+  | 'updatedAt_ASC'
+  | 'updatedAt_DESC'
 
-export type MutationType =   'CREATED' |
-  'UPDATED' |
-  'DELETED'
+export type MutationType = 'CREATED' | 'UPDATED' | 'DELETED'
 
 export interface PlayerCreateManyWithoutGameInput {
   create?: PlayerCreateWithoutGameInput[] | PlayerCreateWithoutGameInput
@@ -853,8 +993,12 @@ export interface PlayerUpdateManyWithoutGameInput {
   connect?: PlayerWhereUniqueInput[] | PlayerWhereUniqueInput
   disconnect?: PlayerWhereUniqueInput[] | PlayerWhereUniqueInput
   delete?: PlayerWhereUniqueInput[] | PlayerWhereUniqueInput
-  update?: PlayerUpdateWithWhereUniqueWithoutGameInput[] | PlayerUpdateWithWhereUniqueWithoutGameInput
-  upsert?: PlayerUpsertWithWhereUniqueWithoutGameInput[] | PlayerUpsertWithWhereUniqueWithoutGameInput
+  update?:
+    | PlayerUpdateWithWhereUniqueWithoutGameInput[]
+    | PlayerUpdateWithWhereUniqueWithoutGameInput
+  upsert?:
+    | PlayerUpsertWithWhereUniqueWithoutGameInput[]
+    | PlayerUpsertWithWhereUniqueWithoutGameInput
 }
 
 export interface GameCreateInput {

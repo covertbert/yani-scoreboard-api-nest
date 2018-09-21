@@ -3,7 +3,8 @@
   "extends": "tslint-config-airbnb",
   "linterOptions": {
     "exclude": [
-      "**/*.binding.ts"
+      "**/*.binding.ts",
+      "**/*.schema.d.ts"
     ]
   },
   "jsRules": {
