@@ -10,7 +10,11 @@
     "start:dev": "nodemon",
     "prestart:prod": "rm -rf dist && tsc",
     "start:prod": "node dist/main.js",
-    "lint": "tslint -p tsconfig.json -c tslint.json"
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "prisma:up": "cd ./database; docker-compose up -d",
+    "prisma:deploy": "cd ./database; prisma deploy",
+    "prisma:seed": "cd ./database; prisma seed",
+    "prisma:reset": "cd ./database; prisma reset"
   },
   "dependencies": {
     "@nestjs/common": "5.3.7",

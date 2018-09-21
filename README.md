@@ -2,19 +2,18 @@
 
 ## Prisma setup
 ```
-npm i -g prisma
-docker-compose up -d
-prisma deploy
+npm run prisma:up
+npm run prisma:deploy
 ```
 
 ## Prisma DB wipe
 ```
-prisma reset
+npm run prisma:reset
 ```
 
 ## Prisma seed DB
 ```
-prisma seed
+npm run prisma:seed
 ```
 
 ## Getting schema
