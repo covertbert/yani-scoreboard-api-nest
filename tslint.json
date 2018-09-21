@@ -3,6 +3,11 @@
   "extends": [
     "tslint:recommended"
   ],
+  "linterOptions": {
+    "exclude": [
+      "**/*.binding.ts"
+    ]
+  },
   "jsRules": {
     "no-unused-expression": true
   },
