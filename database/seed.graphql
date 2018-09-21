@@ -20,4 +20,32 @@ mutation {
   ) {
     id
   }
+  fourth: createPlayer(
+    data: {
+      name: "Tom"
+    }
+  ) {
+    id
+  }
+  fifth: createPlayer(
+    data: {
+      name: "Dick"
+    }
+  ) {
+    id
+  }
+  sixth: createPlayer(
+    data: {
+      name: "Harry"
+    }
+  ) {
+    id
+  }
+  seventh: createPlayer(
+    data: {
+      name: "Abdul"
+    }
+  ) {
+    id
+  }
 }
